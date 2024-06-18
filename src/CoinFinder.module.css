@@ -1,0 +1,105 @@
+.CoinFinder {
+  height: 100%;
+  width: 100%;
+  max-height: 380px;
+  max-width: 260px;
+
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  background: hsl(0deg 0% 5%);
+  border: 2px solid hsl(0deg 0% 20%);
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+.search > input {
+  padding: 6px 8px;
+  padding-left: 34px;
+  border-radius: 4px;
+  flex: 1;
+}
+.search > input:focus {
+  outline-offset: 0;
+  z-index: 1;
+}
+.search > :global(.icon) {
+  margin-left: 14px;
+  margin-right: -26px;
+  pointer-events: none;
+}
+
+.favorite {
+  display: flex;
+  background: hsl(0deg 0% 10%);
+  padding: 4px;
+  gap: 4px;
+}
+.favorite > button {
+  flex: 1;
+  text-transform: uppercase;
+  color: hsl(0deg 0% 60%);
+  padding: 4px 8px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+.favorite > button:hover {
+  background: hsl(0deg 0% 25%);
+  color: hsl(0deg 0% 80%);
+}
+.favorite > button:global(.active) {
+  color: inherit;
+  font-weight: 500;
+}
+
+.listScroll {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  background: linear-gradient(to top, hsl(0deg 0% 10%) 0%, transparent 100%);
+  flex: 1;
+  position: relative;
+}
+.list {
+  min-height: 100%;
+}
+.list > li {
+  display: flex;
+  border-radius: 4px;
+  position: absolute;
+  left: 4px;
+  right: 4px;
+}
+.list > li > button {
+  outline: none;
+}
+.list > li > button:first-child {
+  padding: 4px 8px;
+  padding-right: 6px;
+}
+.list > li > button:last-child {
+  flex: 1;
+}
+.list > li:hover,
+.list > li:focus-within {
+  background: hsl(0deg 0% 20%);
+}
+.list > li:focus-within {
+  outline: 2px solid hsl(0deg 0% 40%);
+  outline-offset: -1px;
+  z-index: 1;
+}
+
+.favoriteHint {
+  padding: 4px 8px;
+  color: hsl(0deg 0% 60%);
+  background: hsl(0deg 0% 10%);
+  border-radius: 0 0 6px 6px;
+}
+.favoriteHint > kbd {
+  padding: 0 8px;
+  border-radius: 4px;
+  background: hsl(0deg 0% 20%);
+}
